@@ -1,20 +1,20 @@
 {
-    "dacName": "DAC",
-    "dacScope": "eosdac",
+    "dacName": "KROWN DAC",
+    "dacScope": "krown",
     "accounts": {
         "treasuryAccount":{
-            "name": "eosdacthedac"
+            "name": "krowndacownr"
         },
         "authAccount": {
-            "name": "dacauthority"
+            "name": "krowndacauth"
         }
     },
     "contracts": {
         
         "token": {
-            "name": "eosdactokens",
-            "symbol": "EOSDAC",
-            "totalSupply": 1000000000.0000,
+            "name": "krowndactokn",
+            "symbol": "KROWN",
+	    "totalSupply": 3690000000.0000,
             "decimals": 4
         },
         "system_token": {
@@ -23,21 +23,21 @@
             "decimals": 4
         },
         "custodian": {
-            "name": "daccustodian",
-            "memo": "daccustodian",
+            "name": "krowndaccust",
+            "memo": "krowndaccust",
             "enable_voting" : true
         },
         "bot":{
-            "name": "eosdacthebot"
+            "name": "krustykrown1"
         },
         "system_msig": {
             "name": "eosio.msig"
         },
         "dac_msig": {
-            "name": "dacmultisigs"
+            "name": "krowndacmult"
         },        
         "wpproposal":{
-            "name": "dacproposals"
+            "name": "krowndacprop"
         },
         "escrow":{
             "name": "eosdacescrow"
@@ -47,24 +47,45 @@
 
     "financial_page_graphs": [
         {
-          "account": "eosdacserver",
-          "contract": "eosio.token",
-          "symbol": "EOS",
-          "description":
-            "The EOS Mainnet block producer account for eosDAC which receives Block Producer rewards."
-        },
-        {
-            "account": "eosdacthedac",
+            "account": "krowndacownr",
             "contract": "eosio.token",
             "symbol": "EOS",
             "description":
               "The DAC owner account where DAC funds are secured and controlled by a 12-account multisig permission system of elected custodians."
         },
         {
-          "account": "daccustodian",
-          "contract": "eosdactokens",
-          "symbol": "EOSDAC",
+          "account": "krowndaccust",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
           "description": "custodian contract description"
+        },
+        {
+          "account": "krownairdrop",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
+          "description":
+            "The current eosDAC service provider account which manages payroll, employment contracts, and real-world interactions on behalf of the DAC."
+        },
+        {
+          "account": "krownengaged",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
+          "description":
+            "The current eosDAC service provider account which manages payroll, employment contracts, and real-world interactions on behalf of the DAC."
+        },
+        {
+          "account": "krowndevfund",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
+          "description":
+            "The current eosDAC service provider account which manages payroll, employment contracts, and real-world interactions on behalf of the DAC."
+        },
+        {
+          "account": "krownparty11",
+          "contract": "krowndactokn",
+          "symbol": "KROWN",
+          "description":
+            "The current eosDAC service provider account which manages payroll, employment contracts, and real-world interactions on behalf of the DAC."
         },
         {
           "account": "dacocoiogmbh",
@@ -78,12 +99,12 @@
     "api": {
         "default_eos_node": "https://proxy.eosnode.tools:443",
         "bpnodes": "https://eosdac.io/topnodes.json",
-        "memberclient_state_api": "https://api.eosdac.io/v1/eosdac",
+        "memberclient_state_api": "https://dac.krown.club/v1/eosdac",
         "firehose": "ws://bos.eosdac.io:1337"
     },
 
     "external":{
-        "homepage": "https://eosdac.io",
+        "homepage": "https://www.krown.club",
         "explorer": "https://bloks.io"
     }
 }
