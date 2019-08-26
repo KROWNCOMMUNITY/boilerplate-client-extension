@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div>
     <q-item to="/example">
       <q-item-side icon="check" color="text2" />
       <q-item-main :label="$t('example.exmaple_menu')" class="text-text1" />
@@ -8,7 +8,8 @@
       <q-item-side icon="check" color="text2" />
       <q-item-main label="Go to App" class="text-text1" />
     </q-item>
-  </div>
+  </div> 
+  -->
 </template>
 
 <script>
