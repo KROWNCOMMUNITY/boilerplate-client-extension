@@ -175,7 +175,7 @@
                 class="float-right"
                 color="bg2"
                 :label="$t('index.open_discord')"
-                @click.native="openURL($configFile.get('external').discordUrl)"
+                @click.native="openURL($configFile.get('external').discord)"
               />
             </div>
           </div>
@@ -332,14 +332,12 @@ export default {
       loading: false
     };
   },
-
   computed: {
     ...mapGetters({
       getAccountName: "user/getAccountName",
       getIsDark: "ui/getIsDark"
     })
   },
-
   methods: {
     openURL,
     login() {
@@ -348,20 +346,17 @@ export default {
     logout() {
       this.$store.dispatch("global/logout");
     },
-
     async subscribeNewsletter() {
       this.onsubscribemsg = "";
       let data = { email: this.email_address, language: this.language };
-
       if (!this.$helper.isEmail(this.email_address) || this.language == "") {
         this.onsubscribemsg = this.$t("index.valid_input_required");
         return false;
       }
-
-      let url =
-        this.$helper.noBackSlash(this.$configFile.get("memberclientapi")) +
-        "/subscribe";
-
+      // let url =
+      //   this.$helper.noBackSlash(this.$configFile.get("memberclientapi")) +
+      //   "/subscribe";
+      let url = "https://toolkit-api.eosdac.io/subscribe";
       this.loading = true;
       try {
         let result = await this.$axios.post(url, data);
@@ -373,7 +368,6 @@ export default {
       }
       this.clearForm();
     },
-
     clearForm() {
       this.loading = false;
       this.email_address = "";
@@ -385,9 +379,6 @@ export default {
 
 <style lang="stylus">
 @import '~variables'
-
-
-
 .index_border_right_col{
   border-right:1px solid grey;
 }
@@ -399,8 +390,6 @@ export default {
   top:0px;
   position:relative;
 }
-
-
 @media screen and (max-width: 1200px) {
   .partnerbox{
     top:40px!important;;
@@ -411,6 +400,5 @@ export default {
   .index_border_right_col{
     border-right: none !important;
   }
-
 }
 </style>
